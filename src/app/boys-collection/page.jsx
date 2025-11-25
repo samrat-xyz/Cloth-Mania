@@ -3,7 +3,7 @@ import Collections from '@/components/Collections/Collections'
 import React from 'react'
 
 async function page() {
-    const data = await fetch("http://localhost:3030/boys-collection")
+    const data = await fetch("https://cloth-mania-server.vercel.app/boys-collection")
     const clothes = await data.json()
   return (
    <div className='container mx-auto'>

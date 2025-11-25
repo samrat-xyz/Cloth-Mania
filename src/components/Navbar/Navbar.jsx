@@ -26,7 +26,7 @@ export default function Navbar() {
     }
 
     try {
-      const res = await fetch(`http://localhost:3030/search?q=${value}`);
+      const res = await fetch(`https://cloth-mania-server.vercel.app/search?q=${value}`);
       const data = await res.json();
       setResults(data);
       setShowDropdown(true);

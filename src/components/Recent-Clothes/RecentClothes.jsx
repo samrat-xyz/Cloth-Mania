@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 async function RecentClothes() {
-  const data = await fetch("http://localhost:3030/top-clothes")
+  const data = await fetch("https://cloth-mania-server.vercel.app/top-clothes")
   const clothes = await data.json()
 
   return (

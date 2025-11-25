@@ -9,7 +9,7 @@ export default function AddToCartButton({ cloth }) {
   const handleAddToCart = async () => {
     try {
       // MongoDB API call
-      const res = await fetch("http://localhost:3030/cart", {
+      const res = await fetch("https://cloth-mania-server.vercel.app/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

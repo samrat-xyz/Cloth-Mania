@@ -3,7 +3,7 @@ import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
 export default async function Page({ params }) {
   const { id } = await params;
 
-  const res = await fetch(`http://localhost:3030/clothes/${id}`);
+  const res = await fetch(`https://cloth-mania-server.vercel.app/clothes/${id}`);
   const cloth = await res.json();
 
   return (

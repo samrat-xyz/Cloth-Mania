@@ -10,7 +10,7 @@ function CartPage() {
 
   useEffect(() => {
     async function fetchCart() {
-      const res = await fetch("http://localhost:3030/cart");
+      const res = await fetch("https://cloth-mania-server.vercel.app/cart");
       const data = await res.json();
       setCartItems(data);
     }
@@ -19,7 +19,7 @@ function CartPage() {
 
   const handleRemove = async (id) => {
     try {
-      await fetch(`http://localhost:3030/cart/${id}`, { method: "DELETE" });
+      await fetch(`https://cloth-mania-server.vercel.app/cart/${id}`, { method: "DELETE" });
       setCartItems(cartItems.filter((item) => item._id !== id));
       Swal.fire({
         icon: "success",
