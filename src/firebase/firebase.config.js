@@ -1,4 +1,6 @@
-import { initializeApp } from "firebase/app";
+"use client";
+
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -10,9 +12,9 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Prevent multiple initializations (very important for Next.js)
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-// Initialize Firebase Authentication
 export const auth = getAuth(app);
+
 export default app;
